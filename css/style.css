@@ -55,47 +55,53 @@ header {
 }
 
 .container {
-    width: 100%;
-    float: right;
+    display: none;
 }
 
+.containerMax {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
 
+.boxTitulo {
+    width: 40vw;
+    margin-left: 2vw;
+    
+}
 
 .imgHome {
     width: 8.33%;
 }
 
-.titulo {
-    align-items: center;
-
+.divTitulo {
+    text-align: center;
+    margin-left: 4vw;
+    width: 30vw;
 }
 
-h1 {
+.titulo {
     font-family:var(--font1);
     font-size: 3em;
     color: var(--cor6);
-    text-align: center;
     margin-left: 40%;
-    
 
 }
-.boxTitulo {
-    width: 75%;
-}
+
 
 .usuario {
-    width: 25%;
-    height: 7vh;
+    width: 40vw;
+    height: 9vh;
     display: flex;
     justify-content: space-between;
-    float: right;
+    float: left;
 }
 
 .usuario p {
     color: var(--cor6);
     font-family: var(--font2);
     margin-top: 15px;
-    margin-left: 10px;
+    margin-right: 2px;
     
 }
 
@@ -183,7 +189,51 @@ footer p {
 
 }
 
+/*====== Página Cliente =======*/
+
+.pesquisaCliente {
+    display: flex;
+}
+
+#pcliente {
+    width: 70%;
+    font-style: italic;
+}
+
+.buttonPesquisar {
+    width: 30%;
+}
+
 /*====== Página Cadastro ==== */
+
+.form {
+    margin-top: 5vw;
+}
+
+.caixaRazaoSocialeCodigo {
+    width: 45vw;
+    display: flex;
+}
+
+
+.bairroCidadeBP {
+    width: 45vw;
+}
+
+.cepLogradouro {
+    display: flex;
+    width: 85vw;
+}
+
+
+#iNumero {
+    width: 50vw;
+}
+
+.labelNumero {
+    margin-right: 31vw;
+}
+
 .areaCadastroCliente {
     margin-top: 3vh;
     width: 90%;
@@ -196,14 +246,33 @@ footer p {
     text-align: center;
 }
 
+.numCompSparkle {
+    display: none;
+}
+
+
 
 /* ====== Configurações Tela 570px - SMARTPHONE ======== */
 
 @media only screen and (max-width: 570px) {
 
     /*==== Configs gerais ====*/
+
+    .container {
+        display: flex;
+        width: 10vw;
+    }
+
+    .boxTitulo {
+        display: none;
+    }
+
+    .divTitulo {
+        margin-left: 20vw;
+    }
+
     .usuario {
-        width: 40%;
+        width: 32%;
         height: 7vh;
         display: flex;
         justify-content: space-between;
@@ -217,10 +286,7 @@ footer p {
         margin-right: 10px;
     }
 
-    .boxTitulo {
-        background-color: var(--cor6);
-        width: 50vw;
-    }
+    
 
     .imgHomeSparkle {
         display: none;
@@ -361,24 +427,42 @@ footer p {
         margin-bottom: 3px;
         background-image: linear-gradient(#45C4B0, #bafdd0 );
         color:var(--cor0);
-        font-weight: ;
     }
     .button {
         border-radius: 10px;
         border: 1px solid var(--cor2);
-        width: ;
     }
 
     /*==Configs Cadastros ==*/
 
+    .form {
+        margin-top: 1vw;
+    }
+
+    .caixaRazaoSocialeCodigo {
+        width: 90vw;
+        display: block;
+    }
+
+
+    .bairroCidadeBP {
+        width: 90vw;
+    }
+
+    .cepLogradouro {
+        display: block;
+        width: 90vw;
+    }
+
     .areaCadastroDeCliente {
         margin-top: 3vh;
         width: 90%;
-        height: 80vh;
+        height: 84vh;
         background-color: rgba(0, 0, 0, 0.479);
         border-radius: 5px;
 
     }
+    
 
     /*==Configs Marketing===*/
     .areaMarketing {
@@ -411,6 +495,9 @@ footer p {
     .labelSparkle {
         color: var(--cor6);
         margin-bottom: 2px;
+    }
+    .labelComplemento {
+        margin-left: 20vw;
     }
     .numCompSparkle {
         display: flex;
@@ -446,16 +533,35 @@ footer p {
 
     /*==Configs Gerais*/
 
-    .container {
+    .containerMax {
         width: 100%;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .container {
+        width: 1vw;
         display: flex;
         margin: 0;
     }
 
     .boxTitulo {
-        display: flex;
-        width: 70%;
-        float: inline-end;
+        width: 10vw;
+        margin-left: 2vw;
+        
+    }
+
+    .divTitulo {
+        text-align: center;
+        margin-left: 3vw;
+    }
+    
+    .titulo {
+        font-family:var(--font1);
+        font-size: 3em;
+        color: var(--cor6);
+        margin-left: 20%;
+    
     }
 
     .imgHomeSparkle {
@@ -464,12 +570,8 @@ footer p {
         
     }
 
-    .titulo {
-        text-align: center;
-    }
-
     .usuario {
-        width: 30%;
+        width: 28vw;
         height: 7vh;
         display: flex;
     
@@ -556,7 +658,8 @@ footer p {
     }
     .subtituloAreaCadastro {
         color: var(--cor3);
-        text-align: center
+        text-align: center;
+        margin-top: 2vh;
     }
 
     .areaClienteCadastradoFuncao {
@@ -581,7 +684,6 @@ footer p {
         margin-bottom: 3px;
         background-image: linear-gradient(#45C4B0, #bafdd0 );
         color:var(--cor0);
-        font-weight: ;
     }
 
     /*=====Configs Cadastro======*/
@@ -593,6 +695,13 @@ footer p {
         border-radius: 5px;
     }
 
+    #iRazaoSocial {
+        width: 40vw;
+    }
+
+    #iCNPJCPF {
+        width: 36vw;
+    }
 
     .form-group {
         width: 90%;
@@ -603,15 +712,39 @@ footer p {
         color: var(--cor6);
         margin-bottom: 2px;
     }
+    .labelComplemento {
+        margin-left: 24vw;
+    }
     .numCompSparkle {
         display: flex;
     }
-    #iNumero {
+
+    #iCEP {
         width: 30vw;
+    }
+
+    #iLogradouro {
+        width: 45vw;
+    }
+
+    #iNumero {
+        width: 35vw;
     }
     #iComplemento {
         width: 50vw;
-        margin-left: 2vw;
+        margin-left: 3vw;
+    }
+
+    .bairroCidadeBP {
+        display: flex;
+    }
+    
+    #iBairro {
+        width: 40vw;
+    }
+
+    #iCidade {
+        width: 36vw;
     }
     .form-check {
         margin-top: 3px;
@@ -651,4 +784,26 @@ footer p {
         color:var(--cor6);
         margin: 1vw;
     }
+
+
+ }
+
+ @media only screen and (min-width: 1200px) {
+
+    /*======= DESKTOP ========*/
+
+    .divTitulo {
+        text-align: center;
+        margin-left: 5vw;
+        width: 30vw;
+    }
+
+    .titulo {
+        font-family:var(--font1);
+        font-size: 3em;
+        color: var(--cor6);
+        margin-left: 42%;
+    
+    }
+
  }

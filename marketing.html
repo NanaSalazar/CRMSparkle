@@ -16,34 +16,36 @@
 </head>
 <body>
     <header>
-        <div class="container" id="nav-container ">
-            <nav class="navbar navbar-expand-lg fixed-top div-menu-sparkle">
-                <button class="navbar-toggler navbar-dark bg-sparkle" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-links" aria-controls="navbar-links" aria-expanded="false" aria-label="Toggle navigation" id="buttonNavSparkle">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-end bg-menu-sparkle" id="navbar-links">
-                    <div class="navbar-nav nav-menu-sparkle">
-                        <a href="index.html" class="nav-item nav-link link-menu-sparkle" id="home-menu">HOME</a>
-                        <a href="cliente.html" class="nav-item nav-link link-menu-sparkle" id="about-menu">CLIENTES</a>
-                        <a href="cadastro.html" class="nav-item nav-link link-menu-sparkle" id="services-menu">CADASTRO</a>
-                        <a href="marketing.html" class="nav-item nav-link link-menu-sparkle" id="team-menu">MARKETING</a>
-                        <a href="#" class="nav-item nav-link link-menu-sparkle" id="portfolio-menu">LOGOUT</a>
-
-                    </div>
-                </div>
-
-            </nav>
+        <div class="containerMax">
             <div class="boxTitulo">
                 <a href="index.html"><img class="imgHomeSparkle" src="css/home-svgrepo-com2.png" alt="home"></a>
+            </div>
+            <div class="divTitulo">
                 <h1 class="titulo">SPARKLE</h1>
             </div>
+            <div class="container">
+                <nav class="navbar navbar-expand-lg fixed-top div-menu-sparkle navbar-sparkle">
+                    <button class="navbar-toggler navbar-dark bg-sparkle" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-links" aria-controls="navbar-links" aria-expanded="false" aria-label="Toggle navigation" id="buttonNavSparkle">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end bg-menu-sparkle" id="navbar-links">
+                        <div class="navbar-nav nav-menu-sparkle">
+                            <a href="index.html" class="nav-item nav-link link-menu-sparkle" id="home-menu">HOME</a>
+                            <a href="cliente.html" class="nav-item nav-link link-menu-sparkle" id="about-menu">CLIENTES</a>
+                            <a href="cadastro.html" class="nav-item nav-link link-menu-sparkle" id="services-menu">CADASTRO</a>
+                            <a href="marketing.html" class="nav-item nav-link link-menu-sparkle" id="team-menu">MARKETING</a>
+                            <a href="#" class="nav-item nav-link link-menu-sparkle" id="portfolio-menu">LOGOUT</a>
+                        </div>
+                    </div>
+                </nav>
+                
+            
+            </div>
+            
             <div class="usuario">
                 <p>Olá, John Doe</p>
                 <img src="css/user-svgrepo-com.svg" alt="">
-
             </div>
-        
-
         </div>
     </header>
     <main class="main">
@@ -58,8 +60,8 @@
             <div class="areaMarketing">
                 <h2 class="subtituloAreaCadastro">Marketing</h2>
                 <div class="pesquisaCliente">
-                    <input type="search" name="cliente" id="pcliente" placeholder="Pesquisar" size="37">
-                    <button class="button">Pesquisar</button>
+                    <input type="search" name="cliente" id="pcliente" placeholder="Pesquisar">
+                    <button class="buttonPesquisar">Pesquisar</button>
 
                 </div>
                 <section class="boxMarketing">
@@ -80,5 +82,6 @@
     <footer class="footer">
         <p>Desenvolvido por Sparkle - Tera 2022</p>
     </footer>
+    <script src="js/appCadastro.js"></script>
 </body>
 </html>

@@ -15,9 +15,16 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header>
-        <div class="container" id="nav-container ">
-            <nav class="navbar navbar-expand-lg fixed-top div-menu-sparkle">
+  <header>
+    <div class="containerMax">
+        <div class="boxTitulo">
+            <a href="index.html"><img class="imgHomeSparkle" src="css/home-svgrepo-com2.png" alt="home"></a>
+        </div>
+        <div class="divTitulo">
+            <h1 class="titulo">SPARKLE</h1>
+        </div>
+        <div class="container">
+            <nav class="navbar navbar-expand-lg fixed-top div-menu-sparkle navbar-sparkle">
                 <button class="navbar-toggler navbar-dark bg-sparkle" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-links" aria-controls="navbar-links" aria-expanded="false" aria-label="Toggle navigation" id="buttonNavSparkle">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -28,24 +35,19 @@
                         <a href="cadastro.html" class="nav-item nav-link link-menu-sparkle" id="services-menu">CADASTRO</a>
                         <a href="marketing.html" class="nav-item nav-link link-menu-sparkle" id="team-menu">MARKETING</a>
                         <a href="#" class="nav-item nav-link link-menu-sparkle" id="portfolio-menu">LOGOUT</a>
-
                     </div>
                 </div>
-
             </nav>
-            <div class="boxTitulo">
-              <a href="index.html"><img class="imgHomeSparkle" src="css/home-svgrepo-com2.png" alt="home"></a>
-                <h1 class="titulo">SPARKLE</h1>
-            </div>
-            <div class="usuario">
-                <p>Olá, John Doe</p>
-                <img src="css/user-svgrepo-com.svg" alt="">
-
-            </div>
+            
         
-
         </div>
-    </header>
+        
+        <div class="usuario">
+            <p>Olá, John Doe</p>
+            <img src="css/user-svgrepo-com.svg" alt="">
+        </div>
+    </div>
+</header>
     <main class="main">
         <div class="buttonMenu">
             <button class="buttonAcess"><a href="cliente.html">CLIENTES</a></button>
@@ -57,38 +59,52 @@
         <section class="homePage">
             <div class="areaCadastroDeCliente">
                 <h2 class="subtituloAreaCadastro">Cadastro de Cliente</h2>
-                <form>
+                <form class="form">
                     <div class="form-row">
-                      <div class="form-group col-md-6">
-                        <label for="iRazaoSocial" class="labelSparkle">Razão Social</label>
-                        <input type="text" class="form-control" id="iRazaoSocial" placeholder="Razão Social">
+                      <div class="caixaRazaoSocialeCodigo">
+                        <div class="form-group col-md-6">
+                          <label for="iRazaoSocial" class="labelSparkle">Razão Social</label>
+                          <input type="text" class="form-control iRazaoSocialMax" id="iRazaoSocial" placeholder="Razão Social">
+                        </div>
+                        <div class="form-group col-md-6 iCNPJCPF">
+                          <label for="iCNPJCPF" class="labelSparkle">CNPJ | CPF</label>
+                          <input type="number" class="form-control" id="iCNPJCPF" placeholder="CNPJ/CPF">
+                        </div>
+                          </div>
                       </div>
-                      <div class="form-group col-md-6">
-                        <label for="iCNPJCPF" class="labelSparkle">CNPJ | CPF</label>
-                        <input type="number" class="form-control" id="iCNPJCPF" placeholder="CNPJ/CPF">
+                    <div class="cepLogradouro">
+                      <div class="form-group">
+                        <label for="iCEP" class="labelSparkle">CEP</label>
+                        <input type="number" class="form-control" id="iCEP" placeholder="CEP exemplo: 00000-000">
                       </div>
-                    </div>
-                    <div class="form-group">
-                      <label for="iCEP" class="labelSparkle">CEP</label>
-                      <input type="number" class="form-control" id="iCEP" placeholder="CEP exemplo: 00000-000">
-                    </div>
-                    <div class="form-group">
-                      <label for="iLogradouro" class="labelSparkle">Logradouro</label>
-                      <input type="text" class="form-control" id="iLogradouro" placeholder="Rua A">
+                      <div class="form-group">
+                        <label for="iLogradouro" class="labelSparkle">Logradouro</label>
+                        <input type="text" class="form-control" id="iLogradouro" placeholder="Rua A">
+                      </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6 ">
-                          <label for="iNumero" class="labelSparkle">Número</label>
+                          
+                          <label for="iNumero" class="labelSparkle labelNumero">Número</label>
+                          <label for="iComplemento" class="labelSparkle">Complemento</label>
                           <div class="numCompSparkle">
                               <input type="text" class="form-control" id="iNumero" placeholder="Exemplo: 280">
-                              <input type="text" class="form-control" id="iComplemento" placeholder="Exemplo: Casa A">
+                              
+                              <input type="text" class="form-control" id="iComplemento" placeholder="Complemento: Ex Casa A">
+                            </div>
                           </div>
                         </div>
                         
                     <div class="form-row">
-                      <div class="form-group col-md-6">
-                        <label for="iCidade" class="labelSparkle">Cidade</label>
-                        <input type="text" class="form-control" id="iCidade" placeholder="Cidade">
+                      <div class="bairroCidadeBP">
+                        <div class="form-group col-md-6">
+                          <label for="iBairro" class="labelSparkle">Bairro</label>
+                          <input type="text" class="form-control" id="iBairro" placeholder="Bairro">
+                        </div>
+                        <div class="form-group col-md-6-Max">
+                          <label for="iCidade" class="labelSparkle">Cidade</label>
+                          <input type="text" class="form-control" id="iCidade" placeholder="Cidade">
+                        </div>
                       </div>
                       <div class="form-group col-md-4">
                         <label for="iEstado" class="labelSparkle">Estado</label>
@@ -108,7 +124,7 @@
                         <label for="ciclo45" class="labelSparkle">Ciclo de 45 dias</label>
                       </div>
                     </div>
-                    <button type="submit" class="btn btn-primary btnSubmitSparkle">Cadastrar</button>
+                    <button type="submit" class="btn btn-primary btnSubmitSparkle" id="btnCadastrar">Cadastrar</button>
                   </form>
     
             </div>
@@ -118,5 +134,7 @@
     <footer class="footer">
         <p>Desenvolvido por Sparkle - Tera 2022</p>
     </footer>
+
+    <script src="js/appCadastro.js"></script>
 </body>
 </html>
