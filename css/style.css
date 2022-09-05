@@ -177,6 +177,16 @@ footer p {
     display: none;
 }
 
+#errorMessage{
+    background-color: white;
+    width: 80vw;
+    height: 10vh;
+    margin: auto;
+    border-radius: 3px;
+    display: none
+    
+}
+
 /*====== Página Home ===== */
 
 .areaHomePage {
@@ -237,7 +247,7 @@ footer p {
 .areaCadastroCliente {
     margin-top: 3vh;
     width: 90%;
-    height: 80vh;
+    height: 80%;
     background-color: rgba(0, 0, 0, 0.479);
     border-radius: 5px;
 }
