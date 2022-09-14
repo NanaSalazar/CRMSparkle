@@ -45,6 +45,11 @@
 }
 
 
+body {
+    height: 100vh;
+    background-color: var(--cor9);
+}
+
 
 header {
     background-image:linear-gradient(#012030, #032333e3);
@@ -112,8 +117,8 @@ header {
     margin-right: 10px;
 }
 
-main {
-    height: 88vh;
+.main {
+    height: 100vh;;
     background-color:var(--cor7);
 }
 .buttonMenu {
@@ -268,6 +273,17 @@ footer p {
 
     /*==== Configs gerais ====*/
 
+    body {
+        height: 100%;
+        background-color: var(--cor9);
+        overflow-x: hidden;
+    }
+
+    .main {
+        height: 100vh;;
+        background-color:var(--cor7);
+    }
+
     .container {
         display: flex;
         width: 10vw;
@@ -366,7 +382,7 @@ footer p {
     /* ===Configs Home=======*/
     .homePage {
         width: 100vw;
-        height: 79vh;  
+        height: 85vh;  
         display: flex;
         justify-content: center;
     }
@@ -374,7 +390,7 @@ footer p {
     .areaHomePage {
         margin-top: 3vh;
         width: 90%;
-        height: 80vh;
+        height: 94vh;
         background-color: rgba(0, 0, 0, 0.479);
         border-radius: 5px;
     
@@ -383,6 +399,7 @@ footer p {
     .clienteTotal {
         margin: 4px;
         margin-top: 5vh;
+        height: 20vh;
         width: 98%;
         border: 1px solid white
     }
@@ -402,13 +419,14 @@ footer p {
     .valorClienteTotal {
         margin: 4px;
         margin-top: 10px;
+        height: 30vh;
         width: 98%;
         border: 1px solid white
     }
 
     .marketingTotal {
         border: 1px solid white;
-        height: 25vh;
+        height: 30vh;
         margin: 4px;
     }
 
@@ -418,7 +436,7 @@ footer p {
 
         margin-top: 3vh;
         width: 90%;
-        height: 80vh;
+        height: 94vh;
         background-color: rgba(0, 0, 0, 0.479);
         border-radius: 5px;
 
@@ -426,7 +444,7 @@ footer p {
 
     .areaClienteCadastradoFuncao {
         border: 1px solid white;
-        height: 72vh;
+        height: 80vh;
         margin: 5px;
 
     }
@@ -444,11 +462,15 @@ footer p {
     }
 
     /*==Configs Cadastros ==*/
-
+    
     .form {
         margin-top: 1vw;
+        height: 90vh;
     }
 
+    .formInput {
+        height: 4.3vh;
+    }
     .caixaRazaoSocialeCodigo {
         width: 90vw;
         display: block;
@@ -467,7 +489,7 @@ footer p {
     .areaCadastroDeCliente {
         margin-top: 3vh;
         width: 90%;
-        height: 84vh;
+        height: 95vh;
         background-color: rgba(0, 0, 0, 0.479);
         border-radius: 5px;
 
@@ -478,7 +500,7 @@ footer p {
     .areaMarketing {
         margin-top: 3vh;
         width: 90%;
-        height: 80vh;
+        height: 90vh;
         background-color: rgba(0, 0, 0, 0.479);
         border-radius: 5px;
     }
@@ -607,15 +629,18 @@ footer p {
         background-color:var(--cor7);
     }
     .buttonMenu {
-        margin-bottom: 0;
+        margin-top: 4vh;
 
     }
-
+    footer {
+        margin-top: 5vh;
+    }
     /*=====Config Home====*/
 
     .homePage {
         width: 100%;
-        height: 76vh;  
+        height: 85vh;
+        margin-top: 1vh;  
         display: flex;
         justify-content: center;
         
@@ -661,7 +686,7 @@ footer p {
 
         margin-top: 3vh;
         width: 90%;
-        height: 76vh;
+        height: 86vh;
         background-color: rgba(0, 0, 0, 0.479);
         border-radius: 5px;
 
@@ -674,7 +699,7 @@ footer p {
 
     .areaClienteCadastradoFuncao {
         border: 1px solid white;
-        height: 69vh;
+        height: 72vh;
         margin: 1vw;
     }
 
@@ -697,10 +722,15 @@ footer p {
     }
 
     /*=====Configs Cadastro======*/
+
+    .form {
+        margin-top: 1vw;
+        height: 90vh;
+    }
     .areaCadastroDeCliente {
         margin-top: 3vh;
         width: 90%;
-        height: 77vh;
+        height: 85vh;
         background-color: rgba(0, 0, 0, 0.479);
         border-radius: 5px;
     }
@@ -768,7 +798,7 @@ footer p {
         margin-left: 37vw;
         background-color: var(--cor2);
         border: 1px solid white;
-        height: 4vh;
+        height: 6vh;
     }
 
     /*===Configs Marketing*/
@@ -776,7 +806,7 @@ footer p {
     .areaMarketing {
         margin-top: 3vh;
         width: 90%;
-        height: 76vh;
+        height: 90vh;
         background-color: rgba(0, 0, 0, 0.479);
         border-radius: 5px;
     }
@@ -814,6 +844,46 @@ footer p {
         color: var(--cor6);
         margin-left: 42%;
     
+    }
+
+    /*========Config Página Clientes =========*/
+    .areaClienteCadastrado {
+
+        margin-top: 3vh;
+        width: 90%;
+        height: 86vh;
+        background-color: rgba(0, 0, 0, 0.479);
+        border-radius: 5px;
+
+    }
+    .subtituloAreaCadastro {
+        color: var(--cor3);
+        text-align: center;
+        margin-top: 2vh;
+    }
+
+    .areaClienteCadastradoFuncao {
+        border: 1px solid white;
+        height: 72vh;
+        margin: 1vw;
+    }
+
+    .pesquisaCliente {
+        border: 1px solid white;
+        margin: 1vw;
+    }
+    .button {
+        border-radius: 10px;
+        border: 1px solid var(--cor2);
+        width: 40%;
+    }
+
+    .boxClienteCadastrado {
+        border: 1px solid white;
+        margin: 1px;
+        margin-bottom: 3px;
+        background-image: linear-gradient(#45C4B0, #bafdd0 );
+        color:var(--cor0);
     }
 
  }
