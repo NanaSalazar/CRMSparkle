@@ -1,19 +1,6 @@
 
 //======= Tela de Cadastro
 
-/*
-
-1 - Iniciar o array que será um banco de dados local. Ao digitar o CPF ou CNPJ fazer as verificações:
-- Se possui no minimo 11 digitos e no maximo 15; FEITO
-     Se possuir menos ou mais mensagem especifica de erro FEITO
-- Informar que não é aceito caracteres, apenas numeros
-- Se ja esta cadastrado
-    Se estiver subir mensagem de erro
-
-*/
-
-
-
 let clientesCadastrados = []
 
 
@@ -63,10 +50,11 @@ function mostraEndereco(dado) {
    
 
 const $iCNPJCPF = document.querySelector('#iCNPJCPF')
-        $iCNPJCPF.addEventListener('blur', function() {
+        $iCNPJCPF.addEventListener('blur', function(e) {
+            e.preventDefault()
             const iCNPJCPF = document.querySelector('#iCNPJCPF').value
             if (iCNPJCPF.length == 11 || iCNPJCPF.length == 15) {
-                //Executar função para verificar se já existe o número cadastrado             
+                verificaClienteExistente(iCNPJCPF)           
             } else {
                 document.querySelector('#errorMessage').style.display = 'block'
                 document.querySelector('.messageTypeError').innerHTML = '<strong>ERRO</strong> Número inválido'
@@ -81,10 +69,7 @@ const btnCadastro = document.querySelector('#btnCadastrar')
 
 btnCadastro.addEventListener('click', function () { 
     const iRazaoSocial = document.querySelector('#iRazaoSocial').value
-    
-    //====== Validação de tamanho de caracteres
-        
-        
+    const iCNPJCPF = document.querySelector('#iCNPJCPF').value             
     const iCEP = document.querySelector('#iCEP').value
     const iLogradouro = document.querySelector('#iLogradouro').value
     const iNumero = document.querySelector('#iNumero').value
@@ -110,7 +95,8 @@ btnCadastro.addEventListener('click', function () {
             cidade: iCidade,
             estado: iEstado,
             valorPedido: iValorPedido,
-            ciclo: iCiclo
+            ciclo: iCiclo,
+            dataCadastro: Date.now()
         }
     
     
@@ -144,6 +130,35 @@ function updateLocalStorage() {
     localStorage.setItem('clientes', clientes)
 }
 
-function getStorage() {
-    cliente = JSON.parse()
+function getLocalStorage() {
+    let clientesLocalSorage = localStorage.getItem('clientes')
+    if(clientesLocalSorage) {
+        console.log('Peguei os clientes cadastrados')
+    } else {
+        console.log('Não tem clientes cadastrados!')
+    }
 }
+
+function verificaClienteExistente(iCNPJCPF) {
+    this.iCNPJCPF = iCNPJCPF
+    let clientesDataBase = JSON.parse(localStorage.getItem('clientes'))
+    
+    if(clientesDataBase) {
+        for(i = 0; i < clientesDataBase.length; i++) {
+            let testeCliente = clientesDataBase[i].codigoCliente
+            if(testeCliente === this.iCNPJCPF) {
+                document.querySelector('#errorMessage').style.display = 'block'
+                document.querySelector('.messageTypeError').innerHTML = '<strong>ERRO</strong> CPF/CNPJ já cadastrado'
+            }
+        }
+    }
+
+    
+    return this.iCNPJCPF
+       
+    
+}
+
+
+//========= Tela Home
+
