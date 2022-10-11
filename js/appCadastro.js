@@ -14,7 +14,7 @@ $cep.addEventListener('blur', function(e) {
         .then(dado => {
             if(dado.erro) {
                 document.querySelector('#errorMessage').style.display = 'block'
-                document.querySelector('.messageTypeError').innerHTML = 'CEP inexistente'
+                document.querySelector('.messageTypeError').innerHTML = '<p class="textErrorMessage">CEP inexistente </p>'
             } else {
                 mostraEndereco(dado)
             }
@@ -50,18 +50,46 @@ function mostraEndereco(dado) {
    
 
 const $iCNPJCPF = document.querySelector('#iCNPJCPF')
-        $iCNPJCPF.addEventListener('blur', function(e) {
+    $iCNPJCPF.addEventListener('keypress', function(e) {
+        if(!checkChar(e)) {
             e.preventDefault()
-            const iCNPJCPF = document.querySelector('#iCNPJCPF').value
-            if (iCNPJCPF.length == 11 || iCNPJCPF.length == 15) {
-                verificaClienteExistente(iCNPJCPF)           
-            } else {
-                document.querySelector('#errorMessage').style.display = 'block'
-                document.querySelector('.messageTypeError').innerHTML = '<strong>ERRO</strong> Número inválido'
-    
-            }
-        })
+        }
+    })
 
+function checkChar(e) {
+    const char = String.fromCharCode(e.keyCode)
+    const pattern = '[0-9]'
+    if(char.match(pattern)) {
+        return true
+    }
+}
+
+$iCNPJCPF.addEventListener('blur', function(e) {
+    e.preventDefault()
+    const iCNPJCPF = document.querySelector('#iCNPJCPF').value
+    if (iCNPJCPF.length == 11 || iCNPJCPF.length == 15) {
+        verificaClienteExistente(iCNPJCPF)           
+    } else {
+        document.querySelector('#errorMessage').style.display = 'block'
+        document.querySelector('.messageTypeError').innerHTML = '<p class="textErrorMessage"><strong>ERRO</strong> Número inválido</p>'
+        }
+})
+
+
+const $ValorPedido = document.querySelector('#iValorPedido')
+    $ValorPedido.addEventListener('keypress', function(e) {
+        if(!checkCharValue(e)) {
+            e.preventDefault()
+        }
+    })
+
+function checkCharValue(e) {
+    const char = String.fromCharCode(e.keyCode)
+    const pattern = '[0-9.]'
+    if(char.match(pattern)) {
+        return true
+    }
+}
 
 const btnCadastro = document.querySelector('#btnCadastrar')
 
@@ -106,7 +134,8 @@ btnCadastro.addEventListener('click', function () {
         limpaInput()
 
     } else {
-        alert('[ERRO] Dados incompletos! Digite novamente!')
+        document.querySelector('#errorMessage').style.display = 'block'
+        document.querySelector('.messageTypeError').innerHTML = '<p class="textErrorMessage"><strong>ERRO!</strong> Dados incompletos!</p>'
     }
     
     
@@ -148,7 +177,7 @@ function verificaClienteExistente(iCNPJCPF) {
             let testeCliente = clientesDataBase[i].codigoCliente
             if(testeCliente === this.iCNPJCPF) {
                 document.querySelector('#errorMessage').style.display = 'block'
-                document.querySelector('.messageTypeError').innerHTML = '<strong>ERRO</strong> CPF/CNPJ já cadastrado'
+                document.querySelector('.messageTypeError').innerHTML = '<p class="textErrorMessage"><strong>ERRO</strong> CPF/CNPJ já cadastrado</p>'
             }
         }
     }

@@ -50,6 +50,22 @@ body {
     background-color: var(--cor9);
 }
 
+#errorMessage{
+    background-color: white;
+    width: 80vw;
+    height: 10vh;
+    margin-left: 10vw;
+    border-radius: 3px;
+
+    display: none;
+    position: fixed;
+    
+}
+
+.textErrorMessage {
+    text-align: center;
+
+}
 
 header {
     background-image:linear-gradient(#012030, #032333e3);
@@ -182,15 +198,7 @@ footer p {
     display: none;
 }
 
-#errorMessage{
-    background-color: white;
-    width: 80vw;
-    height: 10vh;
-    margin: auto;
-    border-radius: 3px;
-    display: none
-    
-}
+
 
 /*====== Página Home ===== */
 
@@ -277,6 +285,23 @@ footer p {
         height: 100%;
         background-color: var(--cor9);
         overflow-x: hidden;
+    }
+
+    #errorMessage{
+        background-color: white;
+        width: 80vw;
+        height: 10vh;
+        margin-left: 10vw;
+        border-radius: 3px;
+    
+        display: none;
+        position: fixed;
+        
+    }
+    
+    .textErrorMessage {
+        text-align: center;
+    
     }
 
     .main {
@@ -564,6 +589,23 @@ footer p {
  @media only screen and (min-width: 571px) {
 
     /*==Configs Gerais*/
+
+    #errorMessage{
+        background-color: white;
+        width: 80vw;
+        height: 10vh;
+        margin-left: 10vw;
+        border-radius: 3px;
+    
+        display: none;
+        position: fixed;
+        
+    }
+    
+    .textErrorMessage {
+        text-align: center;
+    
+    }
 
     .containerMax {
         width: 100%;
