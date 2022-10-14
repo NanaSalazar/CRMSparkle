@@ -1,3 +1,58 @@
+// ===== Tela Login
+const btnLogin = document.querySelector('#btnLogin')
+
+btnLogin.addEventListener('click', loginUser)
+
+function loginUser(e) {
+    const iUser = document.querySelector('#iUser').value
+    const iPassword = document.querySelector('#iPassword').value
+
+    if(iUser && iPassword) {
+        alert('Logado')
+    } else {
+        document.querySelector('#errorMessage').style.display = 'block'
+        document.querySelector('.messageTypeError').innerHTML = 'Login/Senha inválido!'
+    }
+}
+
+
+// ===== Tela Modal-Login
+
+const openModalButton = document.querySelector('#open-modal')
+const closeModalButton = document.querySelector('#close-modal')
+const modal = document.querySelector('#modal')
+const fade = document.querySelector('#fade')
+const sendEmail = document.querySelector('#send-email')
+const emailModal = document.querySelector('#iEmailModal').value
+
+openModalButton.addEventListener('click', openModal)
+closeModalButton.addEventListener('click', closeModal)
+
+sendEmail.addEventListener('click', sendEmailModal)
+
+
+function openModal() {
+    modal.style.display = 'block'
+    fade.style.display = 'block'
+}
+
+function closeModal() {
+    modal.style.display = 'none'
+    fade.style.display = 'none'
+}
+
+function sendEmailModal() {
+    const email = document.querySelector('#iEmailModal').value
+    if(email) {
+        document.querySelector('#sucessMessage').style.display = 'block'
+        document.querySelector('.messageTypeSucess').innerHTML = 'Enviado com sucesso!'
+        closeModal()
+    } else {
+        document.querySelector('#errorMessage').style.display = 'block'
+        document.querySelector('.messageTypeError').innerHTML = 'Digite um email válido'
+    }
+}
+
 
 //======= Tela de Cadastro
 
@@ -106,12 +161,15 @@ btnCadastro.addEventListener('click', function () {
     const iCidade = document.querySelector('#iCidade').value
     const iEstado = document.querySelector('#iEstado').value
     const iValorPedido = document.querySelector('#iValorPedido').value
-    const iCiclo = document.querySelector('input[name="ciclo"]:checked').value
 
+    if (iRazaoSocial && iCNPJCPF && iCEP && iLogradouro && iNumero && iBairro && iCidade && iEstado && iValorPedido) {
+        let ciclo = document.getElementsByName('ciclo')
+        for(i = 0; i < ciclo.length; i++) {
+            if(ciclo[i].checked) {
+                ciclo = ciclo[i].value
+            }
+        }
 
-    
-    
-    if (iRazaoSocial && iCNPJCPF && iCEP && iLogradouro && iNumero && iBairro && iCidade && iEstado && iValorPedido && iCiclo) {
         let novoCliente = {
             razaoSocial: iRazaoSocial,
             codigoCliente: iCNPJCPF,
@@ -123,13 +181,16 @@ btnCadastro.addEventListener('click', function () {
             cidade: iCidade,
             estado: iEstado,
             valorPedido: iValorPedido,
-            ciclo: iCiclo,
+            ciclo: ciclo,
             dataCadastro: Date.now()
         }
     
     
         clientesCadastrados.push(novoCliente)
         updateLocalStorage()
+
+        document.querySelector('#sucessMessage').style.display = 'block'
+        document.querySelector('.messageTypeSucess').innerHTML = '<p class="textErrorMessage"><strong>Sucesso!</strong> Cliente cadastrado!</p>'
         
         limpaInput()
 
